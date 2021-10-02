@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class TodoDB {
 	private String dbFile;
 	private String tableName;
+	private Scanner scan = new Scanner(System.in);
 	
 	public TodoDB(String dbName, String tableName) throws ClassNotFoundException {
 		Class.forName("org.sqlite.JDBC");
@@ -20,7 +21,6 @@ public class TodoDB {
 	
 	public void createTodo() throws SQLException {
 		Connection connect = DriverManager.getConnection("jdbc:sqlite:" + this.dbFile);
-		Scanner scan = new Scanner(System.in);
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 추가 ===");
@@ -37,7 +37,6 @@ public class TodoDB {
 			System.err.println("데이터 추가에 실패했습니다!");
 		
 		stat.close();
-		scan.close();
 		connect.close();
 	}
 	
@@ -60,7 +59,6 @@ public class TodoDB {
 	
 	public void updateTodo() throws SQLException {
 		Connection connect = DriverManager.getConnection("jdbc:sqlite:" + this.dbFile);
-		Scanner scan = new Scanner(System.in);
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 수정 ===");
@@ -80,13 +78,11 @@ public class TodoDB {
 			System.err.println("데이터 수정에 실패했습니다!");
 		
 		stat.close();
-		scan.close();
 		connect.close();
 	}
 	
 	public void deleteTodo() throws SQLException {
 		Connection connect = DriverManager.getConnection("jdbc:sqlite:" + this.dbFile);
-		Scanner scan = new Scanner(System.in);
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 삭제 ===");
@@ -100,7 +96,6 @@ public class TodoDB {
 			System.err.println("데이터 수정에 실패했습니다!");
 		
 		stat.close();
-		scan.close();
 		connect.close();
 	}
 }
