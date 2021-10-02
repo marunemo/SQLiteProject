@@ -11,7 +11,7 @@ public class Main {
 			
 			Scanner scan = new Scanner(System.in);
 			TodoDB database = new TodoDB(dbName, tableName);
-			System.out.println("1. 추가\n2. 조회\n3. 수정\n4. 삭제\n 0. 종료");
+			System.out.println("1. 추가\n2. 조회\n3. 수정\n4. 삭제\n0. 종료");
 			while(menu != 0) {
 				System.out.print(" >>> ");
 				menu = scan.nextInt();
@@ -32,6 +32,7 @@ public class Main {
 						break;
 				}
 			}
+			System.out.println("종료되었습니다.");
 			scan.close();
 		}
 		catch (Exception e) {
