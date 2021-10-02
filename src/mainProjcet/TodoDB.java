@@ -30,8 +30,8 @@ public class TodoDB {
 		String desc = scan.nextLine();
 		
 		String createInsert = "insert into " + this.tableName + " (title, desc) values ('"
-				+ title + "', '" + desc + "')";
-		if(stat.executeUpdate(createInsert + ";") > 0)
+				+ title + "', '" + desc + "');";
+		if(stat.executeUpdate(createInsert) > 0)
 			System.out.println("데이터가 추가되었습니다.");
 		else
 			System.err.println("데이터 추가에 실패했습니다!");
@@ -71,8 +71,8 @@ public class TodoDB {
 		String newDesc = scan.nextLine();
 		
 		String updateUpdate = "update " + this.tableName + " set title = '" + newTitle
-				+ "', desc = '" + newDesc + "' where title = " + title;
-		if(stat.executeUpdate(updateUpdate + ";") > 0)
+				+ "', desc = '" + newDesc + "' where title = '" + title + "';";
+		if(stat.executeUpdate(updateUpdate) > 0)
 			System.out.println("데이터가 수정되었습니다.");
 		else
 			System.err.println("데이터 수정에 실패했습니다!");
@@ -89,8 +89,8 @@ public class TodoDB {
 		System.out.print("삭제할 제목 : ");
 		String title = scan.nextLine();
 		
-		String deleteDelete = "delete from " + this.tableName + " where title = " + title;
-		if(stat.executeUpdate(deleteDelete + ";") > 0)
+		String deleteDelete = "delete from " + this.tableName + " where title = '" + title + "';";
+		if(stat.executeUpdate(deleteDelete) > 0)
 			System.out.println("데이터가 수정되었습니다.");
 		else
 			System.err.println("데이터 수정에 실패했습니다!");
