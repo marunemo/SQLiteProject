@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		try {
-			String dbName = "mySQLite.db";
-			String tableName = "todolist";
+			String dbName = "myfirst.db";
+			String tableName = "g_artists";
 			int menu = -1;
 			
 			Scanner scan = new Scanner(System.in);
