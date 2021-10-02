@@ -24,9 +24,9 @@ public class TodoDB {
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 추가 ===");
-		System.out.println("제목 : ");
+		System.out.print("제목 : ");
 		String title = scan.nextLine();
-		System.out.println("내용 : ");
+		System.out.print("내용 : ");
 		String desc = scan.nextLine();
 		
 		String createInsert = "insert into " + this.tableName + " (title, desc) values ('"
@@ -64,12 +64,12 @@ public class TodoDB {
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 수정 ===");
-		System.out.println("수정할 제목 : ");
+		System.out.print("수정할 제목 : ");
 		String title = scan.nextLine();
 		
-		System.out.println("새 제목 : ");
+		System.out.print("새 제목 : ");
 		String newTitle = scan.nextLine();
-		System.out.println("새 내용 : ");
+		System.out.print("새 내용 : ");
 		String newDesc = scan.nextLine();
 		
 		String updateUpdate = "update " + this.tableName + " set title = '" + newTitle
@@ -90,7 +90,7 @@ public class TodoDB {
 		Statement stat = connect.createStatement();
 		
 		System.out.println("\n=== 데이터 삭제 ===");
-		System.out.println("삭제할 제목 : ");
+		System.out.print("삭제할 제목 : ");
 		String title = scan.nextLine();
 		
 		String deleteDelete = "delete from " + this.tableName + " where title = " + title;
