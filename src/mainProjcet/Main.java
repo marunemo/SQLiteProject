@@ -3,7 +3,7 @@ package mainProjcet;
 import java.util.Scanner;
 
 public class Main {
-	public static void main() {
+	public static void main(String[] args) {
 		try {
 			String dbName = "mySQLite.db";
 			String tableName = "todolist";
